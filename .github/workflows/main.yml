@@ -1,11 +1,17 @@
-name: A workflow for my Hello World file
-on: push
+name: Update express_mono in express-mono-repo to lastest release
+on:
+    # release:
+    #     # Options: published, unpublished, created, edited, deleted, prereleased
+    #     types: [published]
+  push:
+    branches:
+      - master
 jobs:
   build:
-    name: Hello world action
+    name: Update express-mono-upstream action
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v1
     - uses: ./action-a
       env:
-        MY_NAME: "Mona"
+        EXPRESS_VERSION: "v4.0.0"
