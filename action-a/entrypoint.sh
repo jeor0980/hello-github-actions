@@ -10,11 +10,12 @@ echo Start script...
 git clone https://github.com/CuBoulder/express-mono-upstream.git
 cd express-mono-upstream
 git checkout -b $EXPRESS_VERSION
+ls -al
 cd profiles
 rm -rf express
 git clone https://github.com/CuBoulder/express_mono.git express
 cd express
-git checkout tags/$EXPRESS_VERSION
+git checkout $EXPRESS_VERSION
 cd .."
 git add express
 git commit -m "Updating express_mono to $EXPRESS_VERSION
