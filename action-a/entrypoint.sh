@@ -1,5 +1,10 @@
 #!/bin/sh -l
 
+sh -c "echo Installing Git"
+sh -c "sudo apt update"
+sh -c "apt install git"
+sh -c "git --version"
+
 sh -c "echo Printing global variables..."
 sh -c "echo $GITHUB_REF"
 sh -c "echo $GITHUB_SHA"
