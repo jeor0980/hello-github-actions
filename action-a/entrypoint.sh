@@ -1,8 +1,8 @@
 #!/bin/sh -l
 
 sh -c "echo Installing Git"
-sh -c "sudo apt update"
-sh -c "apt install git"
+# sh -c "apt update"
+sh -c "apt-get git"
 sh -c "git --version"
 
 sh -c "echo Printing global variables..."
