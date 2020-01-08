@@ -16,8 +16,8 @@ rm -rf express
 git clone https://github.com/CuBoulder/express_mono.git express
 cd express
 git checkout $EXPRESS_VERSION
-cd .."
+cd ..
 git add express
-git commit -m "Updating express_mono to $EXPRESS_VERSION
+git commit -m "Updating express_mono to $EXPRESS_VERSION"
 git push --set-upstream origin $EXPRESS_VERSION
 echo End Script...
