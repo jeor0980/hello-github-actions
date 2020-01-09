@@ -5,14 +5,14 @@ echo $GITHUB_REF
 echo $GITHUB_SHA
 echo Start script...
 echo Cloning express-mono-upstream
-git clone https://osrwebdeploy:<MYTOKEN>git@github.com/CuBoulder/express-mono-upstream.git
+git clone https://osrwebdeploy:$TOKEN@github.com/CuBoulder/express-mono-upstream.git
 cd express-mono-upstream
 git checkout -b $EXPRESS_VERSION
 ls -al
 cd profiles
 rm -rf express
 echo Cloning express_mono
-git clone https://osrwebdeploy:<MYTOKEN>git@github.com/CuBoulder/express_mono.git express
+git clone https://osrwebdeploy:$TOKEN@github.com/CuBoulder/express_mono.git express
 cd express
 git checkout $EXPRESS_VERSION
 cd ..
