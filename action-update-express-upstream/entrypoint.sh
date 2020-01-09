@@ -3,7 +3,7 @@
   git config --global user.email "osr_web_deploy@colorado.edu"
   git config --global user.name "osrwebdeploy"
 
-  TESTING_PREFIX = "actions-test-"
+  TESTING_PREFIX = "1-actions-test-"
   UPSTREAM_NAME = $TESTING_PREFIX += $EXPRESS_VERSION
 
 echo Printing global variables...
@@ -31,7 +31,7 @@ git push --set-upstream origin $UPSTREAM_NAME
 DATA=$(cat <<EOF
 {"title": "Actions: Update express_mono to ${GITHUB_REF}",
 "body": "Please pull these awesome changes in",
-"head": "actions-test-v4.0.0",
+"head": "1-actions-test-v4.0.0",
 "base": "master"}
 EOF
 )
