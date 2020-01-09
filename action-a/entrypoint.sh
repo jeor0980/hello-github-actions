@@ -1,5 +1,8 @@
 #!/bin/bash
 
+  git config --global user.email "osr_web_deploy@colorado.edu"
+  git config --global user.name "osrwebdeploy"
+
 echo Printing global variables...
 echo $GITHUB_REF
 echo $GITHUB_SHA
