@@ -20,7 +20,6 @@ cd express
 git checkout $EXPRESS_VERSION
 cd ..
 git add express
-git status
 git commit -m "Updating express_mono to $EXPRESS_VERSION"
 echo Pushing changes...
 git push --set-upstream origin $EXPRESS_VERSION
