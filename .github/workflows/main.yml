@@ -8,19 +8,11 @@ on:
       - first-action
 jobs:
   build:
-    name: Update express-mono-upstream action
+    name: Update express-mono-upstream to latest release
     runs-on: ubuntu-latest    
     steps:
-    - uses: actions/checkout@v1
-    # - uses: ./action-a
-    #   env:
-    #     EXPRESS_VERSION: "actions-testing-v4.0.0"
-    #     TOKEN: ${{ secrets.OSRWEBDEPLOY_TOKEN }}
-    - uses: smartinspereira/auto-create-pr-action@master
+    # - uses: actions/checkout@v1
+    - uses: ./action-update-express-upstream
       env:
-        GITHUB_TOKEN: ${{ secrets.OSRWEBDEPLOY_TOKEN }}
-        BRANCH_PREFIX: "v"
-        # BASE_BRANCH: ""
-        PULL_REQUEST_TITLE: "Updating express_mono to version"
-        # PULL_REQUEST_BODY: ""
-        PULL_REQUEST_DRAFT: "true"
+        EXPRESS_VERSION: "v4.0.0"
+        TOKEN: ${{ secrets.OSRWEBDEPLOY_TOKEN }}
