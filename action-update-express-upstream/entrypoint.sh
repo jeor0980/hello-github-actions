@@ -3,7 +3,7 @@
   git config --global user.email "osr_web_deploy@colorado.edu"
   git config --global user.name "osrwebdeploy"
 
-  TESTING_PREFIX = "3-actions-test-"
+  TESTING_PREFIX = "4-actions-test-"
   UPSTREAM_NAME = $TESTING_PREFIX += $EXPRESS_VERSION
 
 echo Printing global variables...
@@ -13,6 +13,7 @@ echo Start script...
 echo Cloning express-mono-upstream
 git clone https://osrwebdeploy:$TOKEN@github.com/CuBoulder/express-mono-upstream.git
 cd express-mono-upstream
+echo checking out $UPSTREAM_NAME
 git checkout -b $UPSTREAM_NAME
 ls -al
 cd profiles
@@ -29,9 +30,9 @@ git push --set-upstream origin $UPSTREAM_NAME
 
 # Workaround for storing JSON as bash variable without external library
 DATA=$(cat <<EOF
-{"title": "Actions: Update express_mono to ",
+{"title": "Actions Update express_mono to",
 "body": "Please pull these awesome changes in",
-"head": "3-actions-test-v4.0.0",
+"head": "4-actions-test-v4.0.0",
 "base": "master"}
 EOF
 )
