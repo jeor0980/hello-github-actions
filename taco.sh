@@ -6,4 +6,7 @@ DATA=$(cat <<EOF
 EOF
 )
 
-echo ${DATA}
+TESTING_PREFIX = "8-actions-test-"
+UPSTREAM_NAME = $TESTING_PREFIX += $EXPRESS_VERSION
+
+echo ${TESTING_PREFIX}
