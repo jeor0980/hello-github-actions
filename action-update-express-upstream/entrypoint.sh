@@ -38,6 +38,6 @@ EOF
 )
 
 echo Sending pull request
-curl -sSL -H "Authorization: token ${TOKEN}" -H "application/vnd.github.v3+json" -X POST --data '${DATA}' https://api.github.com/repos/CuBoulder/express-mono-upstream/pulls
+curl -sSL -H "Authorization: token ${TOKEN}" -H "application/vnd.github.v3+json" -X POST --data ${DATA} https://api.github.com/repos/CuBoulder/express-mono-upstream/pulls
 
 echo End Script...
