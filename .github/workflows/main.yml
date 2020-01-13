@@ -4,7 +4,7 @@ on:
     #     # Options: published, unpublished, created, edited, deleted, prereleased
     #     types: [published]
   release:
-    types: [created]
+    types: [published]
 jobs:
   build:
     name: Update express-mono-upstream to latest release
@@ -13,4 +13,5 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ./action-update-express-upstream
       env:
+        EXPRESS_VERSION: "v4.1.2"
         TOKEN: ${{ secrets.OSRWEBDEPLOY_TOKEN }}

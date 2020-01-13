@@ -4,7 +4,7 @@ git config --global user.email "osr_web_deploy@colorado.edu"
 git config --global user.name "osrwebdeploy"
 
 TESTING_PREFIX="14-actions-test-"
-UPSTREAM_NAME=$TESTING_PREFIX$GITHUB_REF
+UPSTREAM_NAME=$TESTING_PREFIX$EXPRESS_VERSION
 
 
 echo Printing global variables...
@@ -22,10 +22,10 @@ rm -rf express
 echo Cloning express_mono
 git clone https://osrwebdeploy:$TOKEN@github.com/CuBoulder/express_mono.git express
 cd express
-git checkout $GITHUB_REF
+git checkout $EXPRESS_VERSION
 cd ..
 git add express
-git commit -m "Updating express_mono to $GITHUB_REF"
+git commit -m "Updating express_mono to $EXPRESS_VERSION"
 echo Pushing changes...
 git push --set-upstream origin $UPSTREAM_NAME
 
