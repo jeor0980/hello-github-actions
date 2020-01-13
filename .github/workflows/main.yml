@@ -1,11 +1,17 @@
-name: A workflow for my Hello World file
-on: push
+name: Update express_mono in express-mono-repo to lastest release
+on:
+    # release:
+    #     # Options: published, unpublished, created, edited, deleted, prereleased
+    #     types: [published]
+  release:
+    types: [published]
 jobs:
   build:
-    name: Hello world action
+    name: Update express-mono-upstream to latest release
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v1
-    - uses: ./action-a
+    - uses: ./action-update-express-upstream
       env:
-        MY_NAME: "Mona"
+        EXPRESS_VERSION: "v4.1.2"
+        TOKEN: ${{ secrets.OSRWEBDEPLOY_TOKEN }}
