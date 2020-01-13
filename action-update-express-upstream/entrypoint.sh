@@ -3,8 +3,8 @@
 git config --global user.email "osr_web_deploy@colorado.edu"
 git config --global user.name "osrwebdeploy"
 
-TESTING_PREFIX="13-actions-test-"
-UPSTREAM_NAME=$TESTING_PREFIX$EXPRESS_VERSION
+TESTING_PREFIX="14-actions-test-"
+UPSTREAM_NAME=$TESTING_PREFIX$GITHUB_REF
 
 
 echo Printing global variables...
@@ -22,10 +22,10 @@ rm -rf express
 echo Cloning express_mono
 git clone https://osrwebdeploy:$TOKEN@github.com/CuBoulder/express_mono.git express
 cd express
-git checkout $EXPRESS_VERSION
+git checkout $GITHUB_REF
 cd ..
 git add express
-git commit -m "Updating express_mono to $EXPRESS_VERSION"
+git commit -m "Updating express_mono to $GITHUB_REF"
 echo Pushing changes...
 git push --set-upstream origin $UPSTREAM_NAME
 
@@ -39,7 +39,7 @@ git push --set-upstream origin $UPSTREAM_NAME
 # )
 
 BODY="Please pull these awesome changes in";    # this is the content of the message
-TITLE="Actions Update express_mono to ${EXPRESS_VERSION}";   # pull request title
+TITLE="Testing: Update express_mono to ${EXPRESS_VERSION}";   # pull request title
 
 DATA="{\"title\":\"${TITLE}\", \"body\":\"${BODY}\", \"base\":\"master\", \"head\":\"${UPSTREAM_NAME}\"}";
 
