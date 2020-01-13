@@ -7,7 +7,6 @@ RUN apt-get update && \
 
 LABEL "com.github.actions.name"="Update express_mono upstream"
 LABEL "com.github.actions.description"="Update express_mono in Pantheon Upstream"
-LABEL "com.github.actions.icon"="mic"
 LABEL "com.github.actions.color"="purple"
 
 LABEL "repository"="https://github.com/CuBoulder/express_mono"
