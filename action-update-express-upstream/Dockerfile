@@ -3,8 +3,7 @@ FROM debian:9.5-slim
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git && \
-    apt-get install -y curl && \
-    apt-get install -y jq
+    apt-get install -y curl
 
 LABEL "com.github.actions.name"="Update express_mono upstream"
 LABEL "com.github.actions.description"="Update express_mono in Pantheon Upstream"
