@@ -3,7 +3,7 @@
 git config --global user.email "osr_web_deploy@colorado.edu"
 git config --global user.name "osrwebdeploy"
 
-TESTING_PREFIX="9-actions-test-"
+TESTING_PREFIX="10-actions-test-"
 UPSTREAM_NAME=$TESTING_PREFIX$EXPRESS_VERSION
 
 echo Printing global variables...
@@ -38,6 +38,6 @@ git push --set-upstream origin $UPSTREAM_NAME
 # )
 
 echo Sending pull request
-curl -sSL -H "Authorization: token ${TOKEN}" -H "application/vnd.github.v3+json" -X POST --data '{"title": "Actions Update express_mono to", "body": "Please pull these awesome changes in", "head": "9-actions-test-v4.0.0", "base": "master"}' https://api.github.com/repos/CuBoulder/express-mono-upstream/pulls
+curl -sSL -H "Authorization: token ${TOKEN}" -H "application/vnd.github.v3+json" -X POST --data '{"title": "Actions Update express_mono to", "body": "Please pull these awesome changes in", "head": "10-actions-test-v4.1.2", "base": "master"}' https://api.github.com/repos/CuBoulder/express-mono-upstream/pulls
 
 echo End Script...
